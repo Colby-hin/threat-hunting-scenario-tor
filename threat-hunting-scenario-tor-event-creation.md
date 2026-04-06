@@ -79,14 +79,5 @@ DeviceFileEvents
 - **Author Contact**: https://www.linkedin.com/in/colby-hinchy/
 - **Date**: Febuary 22, 2026
 
-## Validated By:
-- **Reviewer Name**: 
-- **Reviewer Contact**: 
-- **Validation Date**: 
-
----
-
-## Additional Notes:
-- **None**
 
 ---
