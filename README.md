@@ -45,7 +45,7 @@ DeviceFileEvents
 
 ---
 
-### 2. Searched the DeviceProcessEvents Table
+### 2. Searched the `DeviceProcessEvents` Table
 Searched for any ProcessCommandLine that contained the string "tor-browser-windows-x86_64-portable-15.0.6.exe". Based on the logs returned, at Feb 22, 2026 8:13:03 PM, an employee on the thl-colby device ran the file tor-browser-windows-x86_64-portable-15.0.6.exe from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
@@ -61,7 +61,7 @@ DeviceProcessEvents
 
 ---
 
-### 3. Searched the DeviceProcessEvents Table for TOR Browser Execution
+### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
 Searched for any indication that user azureuser actually opened the TOR browser. There was evidence that they did open it at Feb 22, 2026 8:13:56 PM. There were several other instances of firefox.exe (TOR) as well as tor.exe spawned afterwards.
 
 
