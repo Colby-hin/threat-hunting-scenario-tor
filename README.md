@@ -81,7 +81,7 @@ DeviceProcessEvents
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-Searched for any indication the TOR browser was used to establish a connection using any of the known TOR ports. At `2024-11-08T22:18:01.1246358Z`, an employee on the "threat-hunt-lab" device successfully established a connection to the remote IP address `176.198.159.33` on port `9001`. The connection was initiated by the process `tor.exe`, located in the folder `c:\users\employee\desktop\tor browser\browser\torbrowser\tor\tor.exe`. There were a couple of other connections to sites over port `443`.
+At 2026-02-22T20:14:16, an employee on the thl-colby device successfully established a connection to the remote IP address 103.149.168.190 on port 9001. The connection was initiated by the process tor.exe, located in c:\users\azureuser\desktop\tor browser\browser\torbrowser\tor\tor.exe. There were several other connections to sites over port 9001 as well.
 
 **Query used to locate events:**
 
@@ -127,10 +127,10 @@ This confirms that the TOR Browser installation was executed.
 
 ### 3. Process Execution - TOR Browser Launch
 
-Timestamp (Observed): 2026-02-23T01:13:56.1645318Z
+Timestamp (Observed): Feb 22, 2026 8:14:08 PM
  What Happened:
- Process telemetry shows that executable(s) associated with the actual TOR Browser (such as tor.exe or firefox.exe) were launched. This indicates that the TOR Browser was opened and run after installation.
-This suggests that the user did not just install the browser — they actively launched it and began a session.
+Searched the DeviceProcessEvents Table for TOR Browser Execution
+Searched for any indication that user azureuser actually opened the TOR browser. There was evidence that they did open it at 2026-02-22T20:14:08. There were several other instances of firefox.exe (TOR) as well as tor.exe spawned afterwards.
 
 
 ### 4. Network Connection - TOR Network
