@@ -45,9 +45,8 @@ DeviceFileEvents
 
 ---
 
-### 2. Searched the `DeviceProcessEvents` Table
-
-Searched for any `ProcessCommandLine` that contained the string "tor-browser-windows-x86_64-portable-14.0.1.exe". Based on the logs returned, at `2024-11-08T22:16:47.4484567Z`, an employee on the "threat-hunt-lab" device ran the file `tor-browser-windows-x86_64-portable-14.0.1.exe` from their Downloads folder, using a command that triggered a silent installation.
+### 2. Searched the DeviceProcessEvents Table
+Searched for any ProcessCommandLine that contained the string "tor-browser-windows-x86_64-portable-15.0.6.exe". Based on the logs returned, at Feb 22, 2026 8:13:03 PM, an employee on the thl-colby device ran the file tor-browser-windows-x86_64-portable-15.0.6.exe from their Downloads folder, using a command that triggered a silent installation.
 
 **Query used to locate event:**
 
@@ -62,9 +61,10 @@ DeviceProcessEvents
 
 ---
 
-### 3. Searched the `DeviceProcessEvents` Table for TOR Browser Execution
+### 3. Searched the DeviceProcessEvents Table for TOR Browser Execution
+Searched for any indication that user azureuser actually opened the TOR browser. There was evidence that they did open it at Feb 22, 2026 8:13:56 PM. There were several other instances of firefox.exe (TOR) as well as tor.exe spawned afterwards.
 
-Searched for any indication that user "employee" actually opened the TOR browser. There was evidence that they did open it at `2024-11-08T22:17:21.6357935Z`. There were several other instances of `firefox.exe` (TOR) as well as `tor.exe` spawned afterwards.
+
 
 **Query used to locate events:**
 
@@ -75,13 +75,14 @@ DeviceProcessEvents
 | project Timestamp, DeviceName, AccountName, ActionType, FileName, FolderPath, SHA256, ProcessCommandLine
 | order by Timestamp desc 
 ```
-<img width="1049" height="716" alt="image" src="https://github.com/user-attachments/assets/07eea8c0-8b5b-47cf-9eb6-a92799534974" />
+<img width="1949" height="1136" alt="image" src="https://github.com/user-attachments/assets/8a535400-4512-4968-af3c-83b6f07b81c2" />
+ 
 
 ---
 
 ### 4. Searched the `DeviceNetworkEvents` Table for TOR Network Connections
 
-At 2026-02-22T20:14:16, an employee on the thl-colby device successfully established a connection to the remote IP address 103.149.168.190 on port 9001. The connection was initiated by the process tor.exe, located in c:\users\azureuser\desktop\tor browser\browser\torbrowser\tor\tor.exe. There were several other connections to sites over port 9001 as well.
+At Feb 22, 2026 8:14:16 PM, an employee on the thl-colby device successfully established a connection to the remote IP address 103.149.168.190 on port 9001. The connection was initiated by the process tor.exe, located in c:\users\azureuser\desktop\tor browser\browser\torbrowser\tor\tor.exe. There were several other connections to sites over port 9001 as well.
 
 **Query used to locate events:**
 
@@ -127,18 +128,18 @@ This confirms that the TOR Browser installation was executed.
 
 ### 3. Process Execution - TOR Browser Launch
 
-Timestamp (Observed): Feb 22, 2026 8:14:08 PM
+Timestamp (Observed): Feb 22, 2026 8:13:56 PM
  What Happened:
 Searched the DeviceProcessEvents Table for TOR Browser Execution
-Searched for any indication that user azureuser actually opened the TOR browser. There was evidence that they did open it at 2026-02-22T20:14:08. There were several other instances of firefox.exe (TOR) as well as tor.exe spawned afterwards.
+Searched for any indication that user azureuser actually opened the TOR browser. There was evidence that they did open it at Feb 22, 2026 8:13:56 PM. There were several other instances of firefox.exe (TOR) as well as tor.exe spawned afterwards.
 
 
 ### 4. Network Connection - TOR Network
 
-Timestamp (Observed): 2026-02-23T01:14:16.9136841Z
+Timestamp (Observed): Feb 22, 2026 8:14:16 PM
  What Happened:
  Network telemetry shows that a successful outbound connection was established from the endpoint thl-colby using tor.exe. The connection went to:
-Remote IP: 89.117.1.123
+Remote IP: 103.149.168.190
 
 
 Remote Port: 9001
